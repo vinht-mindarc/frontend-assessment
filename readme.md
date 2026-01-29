@@ -1,40 +1,99 @@
-Introduction
+## Frontend Assessment Submission
+This repository contains my submission for the frontend assessment.  
+The project demonstrates component structure, responsive UI patterns, and reusable styling using Vue.js.
+
 ---
-Thanks for taking the time to complete this frontend technical assessment. We will be focusing on software quality (scalability, readability, maintainability, etc.) and your eye for detail. You may include any libraries, but Vue.js is preferred and jQuery is not recommended. Along with following best practices, bonus points for following our [coding guidelines](https://github.com/mindarc/frontend-assessment/wiki/Coding-guidelines). 
 
-Exercise 1
+## Live Demo
+
+- **exercise1**: https://vinhtran-8ec.pages.dev/exercise1
+- **exercise2**: https://vinhtran-8ec.pages.dev/exercise2
+
 ---
-Build a responsive page based on the designs.
 
-##### Requirements
-1. Match the designs exactly.
-2. Needs to be responsive.
+## Exercises Overview
 
-##### Designs
-* exercise1-desktop.png
-* exercise1-mobile.png
+### Exercise 1
 
-##### Assets
-* Desktop banner - [https://via.placeholder.com/1920x650](https://placehold.co/1920x650)
-* Mobile banner - [https://via.placeholder.com/600x600](https://placehold.co/600x600)
-* Content images - [https://via.placeholder.com/400x300](https://placehold.co/400x300)
+A responsive, content-focused page implementation featuring a hero banner and card-based layout.
 
-Exercise 2
+**Features:**
+- ✅ Responsive layout for desktop and mobile
+- ✅ Structured SASS/SCSS architecture
+- ✅ BEM naming convention for custom styles
+- ✅ Reusable UI components
+- ✅ Subtle entrance animations for improved UX
+
 ---
-Read the `data.json` file and display the data as tabs on desktop and an accordion on mobile.
 
-##### Requirements
-1. Display data in tabs on desktop.
-2. Display data in an accordion on mobile.
-3. Only 1 accordion/tab should be open at a time.
-4. Open the first accordion/tab on load.
-5. If the open accordion is selected, close it.
+### Exercise 2
 
-###### Bonus points
-* Improve the user experience with meaningful animations/transitions.
-* Design and styling.
-* Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`.
+Dynamic content rendering with responsive behavior using a shared data source.
 
-Submission
+**Features:**
+- ✅ Tabs interface on desktop
+- ✅ Accordion interface on mobile
+- ✅ Single active tab/accordion at a time
+- ✅ First item opens on initial load
+- ✅ Toggle behavior (close when active item is selected)
+- ✅ Smooth animations and transitions
+
 ---
-We recommend submitting your completed assessment as a forked repository. Please replace README content with instructions and relevant documentation.
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js 20.19+ or 22.12+
+- npm or yarn
+
+---
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
+### Tech Stack
+
+- Framework: Vue.js 3
+- Routing: Vue Router
+- Styling: Tailwind CSS + SCSS (BEM methodology)
+- Build Tool: Vite
+- Deployment: Cloudflare Pages
+---
+
+### Key Features
+
+- Responsive Design: Mobile-first approach with breakpoint optimization
+- Component Architecture: Modular, reusable Vue components
+- Smooth Animations: CSS transitions and Vue transitions
+- Accessibility: Semantic HTML and keyboard navigation
+
+---
+
+### Bonus Point
+
+**Question:** Why `('b' + 'a' + + 'a' + 'a').toLowerCase()` results in `"banana"`
+
+**Answer:** This is a classic example of JavaScript type coercion:
+
+    `'b' + 'a'` -> `'ba'` (string concatenation)
+    `+ 'a'` -> `NaN` (unary plus attempts to convert 'a' to a number)
+    `'ba' + NaN` -> `'baNaN'` (NaN is converted to string 'NaN')
+    `'baNaN' + 'a'` -> `'baNaNa'` (string concatenation)
+    `'baNaNa'.toLowerCase()` -> `'banana'` (converts to lowercase)
+
+The key point is the unary plus operator (+), which forces numeric conversion and results in `NaN`.

@@ -1,0 +1,48 @@
+.home-header{
+  @apply text-center my-10;
+}
+
+.exercise-list{
+  @apply grid grid-cols-1 md:grid-cols-2 gap-12;
+}
+
+.exercise-card{
+  @apply flex flex-col justify-between border bg-white border-black p-5 rounded-lg transition duration-300 cursor-pointer;
+
+  &:hover{
+    @apply scale-105 shadow-lg;
+  }
+
+  &__title{
+    @apply text-3xl font-semibold;
+  }
+
+  &__description{
+    @apply mt-5;
+
+    li{
+      @apply text-primary-700;
+
+      &::before {
+        @apply content-['•'] text-primary-900 font-bold mr-2;
+      }
+    }
+  }
+
+  &__footer{
+    @apply mt-5;
+  }
+
+  &__button{
+    @apply relative;
+
+    &::after{
+      @apply ml-2 translate-x-0 transition-all duration-300 ease-out;
+      content: "→";
+    }
+
+    &:hover::after{
+      @apply ml-4;
+    }
+  }
+}
