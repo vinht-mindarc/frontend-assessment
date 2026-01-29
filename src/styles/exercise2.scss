@@ -1,0 +1,83 @@
+.exercise-2 {
+  @apply pt-8;
+}
+
+.tabs {
+  @apply border rounded-md shadow-md overflow-hidden;
+
+  &__header {
+    @apply flex w-full border-b;
+  }
+
+  &__item {
+    @apply flex-1 p-4 text-center cursor-pointer transition duration-300;
+
+    &:hover {
+      @apply bg-primary-700 text-white;
+    }
+
+    &--active {
+      @apply bg-primary-900 text-white;
+    }
+  }
+
+  &__content {
+    @apply p-8 bg-white;
+  }
+}
+
+.accordion {
+  @apply border-y rounded shadow-md overflow-hidden;
+
+  &__item {
+    @apply border-b;
+  }
+
+  &__header {
+    @apply flex justify-between items-center p-4 font-semibold cursor-pointer;
+
+    &:hover {
+      @apply bg-primary-700 text-white;
+    }
+
+    &--active {
+      @apply bg-primary-900 text-white;
+    }
+  }
+
+  &__icon {
+    @apply relative inline-block w-4 h-4;
+
+    &::before,
+    &::after {
+      content: '';
+      @apply absolute top-1/2 left-1/2 w-full h-[2px] bg-current transition-transform duration-500 ease-in-out;
+    }
+
+    &::before {
+      @apply -translate-x-1/2 -translate-y-1/2;
+    }
+
+    &::after {
+      @apply -translate-x-1/2 -translate-y-1/2 rotate-90;
+    }
+
+    &--active {
+      &::before {
+        @apply -translate-x-1/2 -translate-y-1/2 rotate-180;
+      }
+
+      &::after {
+        @apply -translate-x-1/2 -translate-y-1/2 rotate-90 scale-y-0;
+      }
+    }
+  }
+
+  &__content {
+    @apply max-h-0 overflow-y-auto bg-white px-4 transition-all duration-500;
+
+    &--active {
+      @apply max-h-[500px] py-4;
+    }
+  }
+}

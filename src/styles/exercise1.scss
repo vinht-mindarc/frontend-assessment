@@ -1,0 +1,91 @@
+.hero-banner {
+  @apply relative overflow-hidden aspect-[1920/650];
+
+  &:before {
+    @apply content-[''] absolute w-full h-full bg-black/20;
+  }
+
+  &__image {
+    @apply w-full h-auto object-cover;
+  }
+
+  &__content {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-white;
+  }
+
+  &__title {
+    @apply font-bold text-[67px] leading-[1.3] tracking-[1.7px] my-1;
+  }
+
+  &__description {
+    @apply text-[34px] tracking-[2px];
+  }
+}
+
+.content-grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-[39px] py-10;
+}
+
+.content-card {
+  @apply flex flex-col justify-between bg-white border border-gray-200 rounded-[6px] shadow-md;
+
+  &:hover {
+    @apply shadow-lg;
+  }
+
+  &__body {
+    @apply px-[19px] pt-[19px];
+  }
+
+  &__image {
+    @apply w-full aspect-[4/3] rounded-[8px];
+  }
+
+  &__description {
+    @apply text-[16px] leading-6 tracking-[0.6px] text-center pt-[14px];
+  }
+
+  &__footer {
+    @apply flex justify-center items-center pt-4 pb-5;
+  }
+
+  &__link {
+    @apply text-[14px] font-extrabold text-primary-900 tracking-[3px] border-[3px] border-black bg-white py-2 px-4 rounded-3xl transition duration-300;
+
+    &:hover {
+      @apply bg-primary-700 text-white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    @apply aspect-[auto];
+    
+    &__content {
+      @apply px-2;
+    }
+
+    &__title {
+      @apply text-[52px] leading-[1.4] tracking-[0.5px] my-0;
+    }
+
+    &__description {
+      @apply text-[26px] leading-[1.4] tracking-[1.2px];
+    }
+  }
+
+  .content-grid {
+    @apply gap-[39px] py-[39px];
+  }
+  
+  .content-card {
+    &__body {
+      @apply px-5 pt-5;
+    }
+
+    &__image {
+      @apply w-full aspect-[4/3] rounded-[5px];
+    }
+  }
+}

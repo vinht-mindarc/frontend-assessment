@@ -1,0 +1,34 @@
+.navigation {
+  @apply sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-white shadow-sm;
+
+  &__links {
+    @apply flex space-x-4;
+  }
+
+  &__link {
+    @apply text-primary-700 px-2 py-1 rounded-md;
+
+    &:hover {
+      @apply text-primary-900 bg-primary-200;
+    }
+
+    &--active {
+      @apply text-white bg-primary-900;
+    }
+  }
+
+  &__title {
+    @apply text-xl font-semibold;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    @apply flex-col-reverse gap-3;
+
+    &__title {
+      @apply text-2xl;
+    }
+  }
+
+}
